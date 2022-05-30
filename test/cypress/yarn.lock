@@ -598,10 +598,8 @@ __metadata:
     eslint: ^8.15.0
     eslint-plugin-cypress: ^2.12.1
     execa: ^6.1.0
-    fs-extra: ^10.1.0
     prettier: ^2.6.2
     rimraf: ^3.0.2
-    run-script-os: ^1.1.6
     start-server-and-test: ^1.14.0
   languageName: unknown
   linkType: soft
@@ -1165,17 +1163,6 @@ __metadata:
   version: 0.1.7
   resolution: "from@npm:0.1.7"
   checksum: b85125b7890489656eb2e4f208f7654a93ec26e3aefaf3bbbcc0d496fc1941e4405834fcc9fe7333192aa2187905510ace70417bbf9ac6f6f4784a731d986939
-  languageName: node
-  linkType: hard
-
-"fs-extra@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "fs-extra@npm:10.1.0"
-  dependencies:
-    graceful-fs: ^4.2.0
-    jsonfile: ^6.0.1
-    universalify: ^2.0.0
-  checksum: dc94ab37096f813cc3ca12f0f1b5ad6744dfed9ed21e953d72530d103cea193c2f81584a39e9dee1bea36de5ee66805678c0dddc048e8af1427ac19c00fffc50
   languageName: node
   linkType: hard
 
@@ -2035,16 +2022,6 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
-  languageName: node
-  linkType: hard
-
-"run-script-os@npm:^1.1.6":
-  version: 1.1.6
-  resolution: "run-script-os@npm:1.1.6"
-  bin:
-    run-os: index.js
-    run-script-os: index.js
-  checksum: 395c9576c1645867897901bb7f16406a7da06de8962b23e9879c91790248f6b3fb0b2a9dff6821cd77f3a9fb284e956118e39a57aa40280f71b12119555dad84
   languageName: node
   linkType: hard
 
