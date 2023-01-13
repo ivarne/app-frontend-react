@@ -642,6 +642,17 @@ export function nodesInLayout(
   return root;
 }
 
+let nodesInLayoutCache: {
+  layouts: ILayouts | undefined | null;
+  currentView: string | null;
+  repeatingGroups: IRepeatingGroups | null;
+  cache: LayoutRootNodeCollection | null;
+} = {
+  layouts: null,
+  currentView: null,
+  repeatingGroups: null,
+  cache: null,
+};
 /**
  * The same as the function above, but takes multiple layouts and returns a collection
  */
@@ -650,6 +661,14 @@ export function nodesInLayouts(
   currentView: string,
   repeatingGroups: IRepeatingGroups | null,
 ): LayoutRootNodeCollection {
+  if (
+    layouts === nodesInLayoutCache.layouts &&
+    currentView === nodesInLayoutCache.currentView &&
+    repeatingGroups === nodesInLayoutCache.repeatingGroups &&
+    nodesInLayoutCache.cache != null
+  ) {
+    return nodesInLayoutCache.cache;
+  }
   const nodes = {};
 
   const _layouts = layouts || {};
@@ -657,7 +676,15 @@ export function nodesInLayouts(
     nodes[key] = nodesInLayout(_layouts[key], repeatingGroups);
   }
 
-  return new LayoutRootNodeCollection(currentView as keyof typeof nodes, nodes);
+  const cache = new LayoutRootNodeCollection(currentView as keyof typeof nodes, nodes);
+  nodesInLayoutCache = {
+    layouts,
+    currentView,
+    repeatingGroups,
+    cache,
+  };
+
+  return cache;
 }
 
 /**
